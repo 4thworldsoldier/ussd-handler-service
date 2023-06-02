@@ -1,0 +1,33 @@
+
+server:
+  port: 5400
+
+spring:
+  application:
+    name: ussd-handler-service
+  datasource:
+    url: jdbc:mysql://localhost:3306/test1?useSSL=false
+    username: root
+    password: g0thb01
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+    hibernate:
+      ddl-auto: update
+
+#logging:
+#  file:
+#    path: /
+#    name: log.txt
+#  level:
+#    root: DEBUG
+
+service:
+  url: "https://finch-kyc-verification-service.k8.isw.la/api/v2/kyc-verification-service/basic/verify"
+  clientId: "CREG07287575"
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
